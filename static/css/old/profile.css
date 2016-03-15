@@ -1,0 +1,76 @@
+body {
+    font-family: sans-serif;
+}
+
+div.profile {
+    border-top: solid #006699;
+    border-bottom: solid #006699;
+    border-top-radius: 20px;
+    border-bottom-radius: 20px;
+}
+
+header {
+    width: 0 auto;
+    padding: 25px;
+    background: #006699;
+    color: white;
+}
+
+#logo {
+    display: block;
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h5 {
+    font-size: 1em;
+    font-style: italic;
+}
+
+#profilePic {
+    width: 350px;
+    height: 350px;
+}
+
+#profileName {
+    height: 88px;
+    width: 700px;
+}
+
+#profileMessage {
+    height: 262px;
+    width: 700px;
+    font-size: 2em;
+    text-align: justify;
+}
+
+table {
+    width: 0 auto;
+    margin: 49px;
+    padding: 25px;
+}
+
+td {
+    padding: 20px;
+}
+
+.ad {
+    width: 200px;
+    /*height: 100px;*/
+    margin: 0px 60px;
+}
+
+#ad-block1, #ad-block2 {
+    margin: 49px;
+    padding: 25px;
+    background: aliceblue;
+    float: clear;
+    float: left;
+   
+}
+}

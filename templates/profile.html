@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/profile.css" type="text/css"/>
+     </head>
+    
+    <body>
+	<div class="profile">
+        <header>
+            <img id="logo" src="/static/images/pointing-hand-icon.png">
+            <h1>Passages, Inc.</h1>
+            <h5>We know you better than you do!</h5>
+        </header>
+	    <table>
+            <tr>
+                <td rowspan="3"> 
+                  <img class="ad-horiz" id="horiz-top" src="/static/images/bear1.png" />
+                  <img class="ad-horiz" id="horiz-bottom" src="/static/images/alone.png"/>
+		        </td>
+		        <td rowspan="2"><img id="profilePic" src="/static/images/profiles/download.jpeg"></td>
+                
+                <td id="profileName">
+                    <h1 id="name">Stranger</h1>
+		        </td>
+		        
+                <td rowspan="3">
+                   <img id="ad-vert" src="static/images/fart.png"/>
+                <!--
+                   <img class="ad" src="/static/images/kaldoscrope.PNG"/>
+                   <img class="ad" src="/static/images/plastic_surgery.PNG"/>
+                   <img class="ad" src="/static/images/screenshot.PNG"/>
+                -->
+                </td>
+            </tr>
+            
+            <tr>
+                <td id=profileMessage></td>
+            </tr>
+            
+          </table>
+	</div>
+      
+    <script>
+        var messageArray = ["Minimalist through and through.", "I'm not necessarily introverted, but I'm definitely not extroverted!", "I just want to fall completely in love with someone, someday.", "The best art is the world is by Van Gogh.", "I totally love my Pinterest.", "Heaven on Earth is Fashion Week.", "22 yo fashion designer, Artist & #entrepreneur", "I want what's coming to me", "I'm a star, bitches!", "My aesthetic values are just as adventurous as I am.", "Life's too short to wear anything that doesn't make my eyes pop!"];
+
+        var imgArray = {{data|safe|default("[]")}};
+
+        var horizAds = ["alone.png", "bear2.png"];
+        var vertAds = ["elvis.png","fart.png","pad.png","ps.png","ps2.png", "psbf.png", "psgf.png", "smokes.png","spam.png","water.png"];
+        
+        var messageIndex = 0;
+        var imgIndex = 0;
+        var adV = 0;
+        var adH = 0;
+        
+        function swapHorizAds()
+        {
+            if(adH >= horizAds.length)
+                adH = 0;
+            var fresh = horizAds[adH];
+            var ad = document.getElementById("horiz-bottom");
+            ad.src = "/static/images/" + fresh;
+            adH++;
+        }
+        
+        function changeVerticalAds()
+        {
+            shuffle(vertAds);
+            if (adV >= vertAds.length) 
+                adV = 0;
+            var fresh = vertAds[adV];
+            var ad = document.getElementById("ad-vert");
+            ad.src = "/static/images/" + fresh;
+
+            adV++;
+        }
+        
+
+        function changeNameAndImage() 
+        {
+            shuffle(imgArray);
+            if (imgIndex >= imgArray.length) 
+                imgIndex = 0;
+                var newImgName = imgArray[imgIndex];
+            var strLen = newImgName.length;
+            var imgElement = document.getElementById("profilePic");
+            var nameElement = document.getElementById("name");
+            imgElement.src = "/static/profilePics/" +newImgName;
+            nameElement.innerHTML = newImgName.substr(0, strLen-4)
+
+            imgIndex++;
+        }
+
+        function changeMessage() 
+        {
+            shuffle(messageArray);
+            // grab the message and change it.
+            if (messageIndex >= messageArray.length) 
+                messageIndex = 0;
+                var newMessage = messageArray[messageIndex];
+            var messageElement = document.getElementById("profileMessage");
+            messageElement.innerHTML = newMessage;
+            messageIndex++;	
+        }
+
+        // taken from stackexchange
+        function shuffle(array) 
+        {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) 
+            {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        window.onload = function() 
+        {
+            setInterval(changeMessage,7500);
+            setInterval(changeNameAndImage,7500);
+            setInterval(changeVerticalAds, 10000);
+            setInterval(swapHorizAds, 10000);
+            setInterval(function() {window.location.reload(true);}, 100000);
+
+        };
+    </script>
+    </body>
+    
+</html>
