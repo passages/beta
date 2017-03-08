@@ -1,0 +1,74 @@
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+
+.matryoshka1 {
+    max-width: 100%;
+    margin: 0 auto;
+    position: absolute;  
+}
+
+.matryoshka2 {
+    max-width: 30%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.matryoshka2 img {
+    margin: 10px 20px 20px 10px;
+    width: 100%;
+}
+
+.profile {
+    border-top: solid #006699;
+    border-bottom: solid #006699;
+}
+
+header {
+    padding: 25px;
+    background: #006699;
+    color: white;
+}
+
+#logo {
+    display: block;
+    height: 100px;
+    width: 100px;
+    float: left;
+    background: white;
+    border-radius: 25px;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1em;
+    font-style: italic;
+}
+
+img#profilePic {
+    border: solid;
+}
+
+#profileMessage {
+    font-size: 1.5em;
+    height: 200px;
+}
+
+
+.ad-horiz {
+    border: .5px solid gray;  
+}
+
+#ad-vert {
+    border: .5px solid gray;
+}
